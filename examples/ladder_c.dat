@@ -1,0 +1,181 @@
+!
+!  Example: A 4-state ladder system
+!
+!  The data used in this example are the same as in Fig. 15 of
+!  L. Downes, J. Phys. B: At. Mol. Opt. Phys. 56, 223991 (2023).
+! 
+!  The calculation reproduces the results represented by a dark purple
+!  curve in that figure.
+!
+
+&controlparams
+ 
+!+++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+!
+!  Parameter defining the type of calculation 
+!
+!+++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+   icalc = 2     ! Define whether the program should calculate
+                 ! the time dependence of the density matrix (icalc = 1)
+                 ! or the density matrix (and optionally the susceptibility)
+                 ! in the steady state (icalc = 2) or propagate one or two
+                 ! fields (icalc = 3). Here the steady state needs to
+                 ! be calculated.
+ 
+!+++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+!
+!  Parameters controlling the choice of method(s)
+!
+!+++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ 
+   iRabi = 1     ! This means that the Rabi frequencies are explicitly
+                 ! specified as input data. A value of 0 would mean that
+                 ! the program should calculate the Rabi frequencies 
+                 ! from dipole moments and electric field amplitudes.
+
+   inoncw = 0    ! 0: cw field.
+                 ! 1: treat the field as having a time-dependent envelope.
+
+   iweakprb = 1  ! 0: The weak probe approximation is not assumed.
+                 ! 1: The weak probe approximation is assumed.
+
+   iDoppler = 1  ! 0: Calculation without Doppler averaging.
+                 ! 1: Calculation with Doppler averaging.
+   
+!+++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+!
+!  Atomic and field data 
+!
+!+++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+!  The Rabi frequencies, specified as frequencies expressed in MHz.
+!
+!  The following three statements mean that
+!  field 1 couples state 1 to state 2 with a Rabi frequency of -1 MHz,
+!  field 2 couples state 2 to state 3 with a Rabi frequency of -20 MHz, and
+!  field 3 couples state 3 to state 4 with a Rabi frequency of -10 MHz.
+!
+!  These Rabi frequencies are taken to be negative for conformity with
+!  the aforementioned paper, as in that paper the Rabi frequencies are
+!  defined with the sign opposite to that assumed in the obe module. 
+!
+   Rabif(2,1,1) = -1.0d0
+   Rabif(3,2,2) = -20.0d0
+   Rabif(4,3,3) = -10.0d0
+
+!  Decay rates, specified as frequencies expressed in MHz:
+!
+   Gamma_decay_f(1,2) = 10.0d0
+   Gamma_decay_f(2,3) = 1.0d0
+   Gamma_decay_f(3,4) = 1.0d0
+
+!  
+!  Additional dephasing rates, specified as frequencies
+!  expressed in MHz:
+!
+   add_dephas(1,2) = 0.1d0
+   add_dephas(2,3) = 0.1d0
+   add_dephas(3,4) = 0.1d0
+   add_dephas(1,3) = 0.2d0
+   add_dephas(2,4) = 0.2d0
+   add_dephas(1,4) = 0.3d0
+
+!
+!  Variables specifying how the detuning of each field should
+!  contribute to the diagonal elements of the matrix representing
+!  the Hamiltonian. E.g., here the (4,4) element should be
+!      -(Delta_1 + Delta_2 + Delta_3),
+!  where Delta_k is the detuning of field k. The program sets
+!  this as 
+!      detuning_fact(4,1)*Delta_1 + detuning_fact(4,2)*Delta_2 +
+!                                   detuning_fact(4,3)*Delta_3.
+!  Hence we set
+!      detuning_fact(4,1) = detuning_fact(4,2) = detuning_fact(4,3) = -1.
+! 
+   detuning_fact(2,1) = -1.d0
+   detuning_fact(3,1) = -1.d0
+   detuning_fact(4,1) = -1.d0
+   detuning_fact(3,2) = -1.d0
+   detuning_fact(4,2) = -1.d0
+   detuning_fact(4,3) = -1.d0
+
+!
+!  The detunings of field 2 and field 3, specified as frequencies expressed
+!  in MHz. The detuning of field 1 is not specified here as it will be 
+!  determined by control variables set later in this file.
+!
+   detuning(2) = 0.d0
+   detuning(3) = 0.d0
+
+!
+!  Initial populations: We assumed, for definiteness, that the steady state
+!  derives from a system in which states 2, 3 and 4 have initially zero
+!  population. The population of state 1 is thus initially 1.
+!
+   popinit(1) = 1.d0
+   popinit(2) = 0.d0
+   popinit(3) = 0.d0
+   popinit(4) = 0.d0
+ 
+!  The following relates to the averaging over the Doppler profile of
+!  the medium.
+
+!  Variables determining whether the respective field propagates in the
+!  positive direction or the negative direction. Here field 1 counter-
+!  propagates with fields 2 and 3. 
+!
+   idir(1) = 1
+   idir(2) = -1
+   idir(3) = -1
+ 
+!  
+!  The wavelengths of the respective fields, in nm.
+!
+   wavelength(1) =  852.d0
+   wavelength(2) = 1470.d0
+   wavelength(3) =  843.d0
+
+!
+!  The r.m.s. atomic velocity in m/s to be assumed in the calculation.
+!
+   urms = 191.51626d0  ! Cs (mass: 132.90545 u) at 20 C.
+   
+
+!+++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+!
+!  Loop over detuning, if required. 
+!
+!+++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+   ivarydetuning = 1      ! 0: no loop required
+                          ! 1: loop required
+
+!  The index of the field whose detuning should be varied (here field 1):
+!
+   index_field = 1
+
+!  The mesh to be used in that calculation, specified in terms of
+!  frequencies expressed in MHz.
+!
+   detuning_min = -30.0d0
+   detuning_max =  30.0d0
+   detuning_step =  0.2d0
+ 
+!+++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+!
+!  Information about the output files.
+!
+!+++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ 
+   iappend = 0     ! 0: Existing files are overwritten
+                   ! 1: The new results are appended at the end of the relevant
+                   !    files.
+
+!
+!  The program should write the coherence rho_{21} to a file called
+!  ladder_rho21.dat. No other output is required.
+!
+   filename_rho_out(2,1) = 'ladder_rho21.dat'
+
+/

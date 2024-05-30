@@ -1,0 +1,32 @@
+&controlparams
+   icalc = 2    ! Tells driveall to calculate the
+                ! steady state.
+   iRabi = 1    ! The Rabi frequencies will be specified.
+   inoncw = 0   ! The fields are CW.
+   iweakprb = 0 ! The weak probe approximation is not made.
+   iDoppler = 0 ! No Doppler averaging.
+
+!  Rabi frequencies, in units of (2 pi) x MHz:
+   Rabif(2,1,1) =  5.0d0
+   Rabif(3,2,2) = 10.0d0
+
+!  Decay rates, in units of (2 pi) x MHz:
+   Gamma_decay_f(1,2) = 5.0d0
+   Gamma_decay_f(2,3) = 1.0d0
+
+!  Frequency offset of each of the states, in units of
+!  (2 pi) x MHz:
+   energ_f(1) = 0.0d0
+   energ_f(2) = 0.0d0
+   energ_f(3) = 0.0d0
+
+!  The factors multiplying the detunings in the Hamiltonian
+!  (only the non-zero values need to be specified):
+   detuning_fact(2,1) = -1.0d0
+   detuning_fact(3,1) = -1.0d0
+   detuning_fact(3,2) = -1.0d0
+
+!  The detunings, in units of (2pi) x MHz:
+   detuning(1) = 5.0d0
+   detuning(2) = 0.0d0
+/

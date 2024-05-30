@@ -1,0 +1,32 @@
+!
+!  Example: A 4-state ladder system
+!
+
+&keyparams
+ 
+!+++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+!
+!  Key parameters
+!
+!+++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ 
+   nstates = 4   ! Number of states. This must be the same
+                 ! as the value given to nst in the 
+                 ! general_settings module. 
+ 
+   nmin = 1      ! Smallest state index (the states are numbered 1, 2, 3,
+                 ! and 4, not, e.g., 0, 1, 2 and 3).
+ 
+   nfields = 3   ! Number of fields.
+
+   icmplxfld = 0 ! Indicates whether the field amplitudes,
+                 ! dipole moments and Rabi frequencies are specified
+                 ! as real numbers (icmplxfld = 0) or as complex numbers
+                 ! (icmplxfld = 1) in the input files. They are specified
+                 ! as real numbers in this example.
+ 
+!  Name(s) of the file(s) containing the rest of the required information:
+
+   filename_controlparams = 'ladder_c.dat'
+ 
+/
