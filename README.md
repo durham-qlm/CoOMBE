@@ -1,2 +1,1 @@
-# combe
-Computation of Optical and Maxwell-Bloch Equations
+Combined Optical and Maxwell-Bloch Equations
