@@ -1,5 +1,5 @@
 ComMBE
 ==============
 
-**Comb**ined and **M**axwell-**B**loch **E**quations
+**Comb**ined Optical and **M**axwell-**B**loch **E**quations
 
