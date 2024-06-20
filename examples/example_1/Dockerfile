@@ -1,14 +1,17 @@
+#create base podman image using arch linux
 FROM archlinux/archlinux:base-devel
-
 RUN pacman -Syyu --noconfirm
 RUN pacman-db-upgrade
+#install fortran compiler and libraries
 RUN pacman -S --noconfirm make sudo gcc-fortran blas lapack
+#create an output directory
 RUN mkdir -p output
-
-COPY Makefile *.f90 *.sh *.dat /honours/
-WORKDIR /honours/
-
+#copy program source code, and input files to podman image
+COPY Makefile *.f90 *.sh *.dat /ComMBE/
+#change working directory to podman image
+WORKDIR /ComMBE/
+#compile prgram using Makefile
 RUN make
-
-CMD ./run_4st.sh ; cp /honours/ladder_rho21.dat /output/ladder_rho21.dat
+#Run program, then copy output file from podman image to local output directory
+CMD ./run_4st.sh ; cp /ComMBE/ladder_rho21.dat /output/ladder_rho21.dat
 #CMD ["ladder_rho21.dat"]

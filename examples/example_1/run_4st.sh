@@ -1,4 +1,4 @@
 #!/bin/bash
-echo "running honours"
-time ./honours < ladder_k.dat
+echo "running ComMBE"
+time ./ComMBE < ladder_k.dat
 echo "run complete"

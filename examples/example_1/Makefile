@@ -1,6 +1,6 @@
-#simple make for honors
-honours : general_settings_4st.f90 ldbl.f90 obe.f90 mbe.f90 driveall.f90
-	gfortran -o honours general_settings_4st.f90 ldbl.f90 obe.f90 mbe.f90 driveall.f90 -llapack -lblas
+#simple make for ComMBE
+ComMBE : general_settings_4st.f90 ldbl.f90 obe.f90 mbe.f90 driveall.f90
+	gfortran -o ComMBE general_settings_4st.f90 ldbl.f90 obe.f90 mbe.f90 driveall.f90 -llapack -lblas
 #clean:
-#	rm -f honors.o honors.exe
+#	rm -f ComMBE.o ComMBE.exe
 #end of makefile 
