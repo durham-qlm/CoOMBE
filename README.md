@@ -1,1 +1,5 @@
-Combined Optical and Maxwell-Bloch Equations
+ComMBE
+==============
+
+**Comb**ined and **M**axwell-**B**loch **E**quations
+
