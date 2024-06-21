@@ -1,5 +1,5 @@
 CoOMBE
 ==============
 
-**Co**bined **O**ptical and **M**axwell-**B**loch **E**quations
+**Co**mbined **O**ptical and **M**axwell-**B**loch **E**quations
 
