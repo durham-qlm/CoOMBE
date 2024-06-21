@@ -1,0 +1,87 @@
+!
+!  Time-dependent calculation.
+!
+
+&controlparams
+ 
+!+++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+!
+!  Parameter defining the type of calculation 
+!
+!+++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+   icalc = 1     ! Define whether the program should calculate
+                 ! the time dependence of the density matrix (icalc = 1)
+                 ! or the density matrix (and optionally the susceptibility)
+                 ! in the steady state (icalc = 2) or propagate one or two
+                 ! fields (icalc = 3).
+ 
+!+++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+!
+!  Parameters controlling the choice of method(s)
+!
+!+++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ 
+   iRabi = 0     ! 1 is the default value. We need 0 here.
+
+   atol = 1.d-7
+   rtol = 1.d-7
+
+   inoncw = 1     ! 0: cw field. 1: treat the field as having a time-dependent
+                  ! envelope and use mbe_tdint_1 or 2.
+   itdfieldsAorB = 1 ! to define the time-dependent amplitudes with the A
+                     ! routine (1) or the B routine (2).
+   n_time_steps =  400 
+   iinterp = 1
+   pulse_type(1) = 'Gs'
+   t0(1) = 0.d0
+   tw(1) = 1.131d-03  ! 0.008 times sqrt(2), for 0.8 ns FWHM in power
+   amplitude(1) = 86802.1d0  ! 1 kW/cm^2 peak intensity
+   iforce0(1) = 1  ! The field is taken to be exactly zero at t = ti.
+   ti = -0.002d0  ! -2 ns.
+   tf =  0.002d0  !  2 ns.
+
+   istart = 2
+!  Choice of integration rule
+   imethod = 4  ! Use dop853.
+!
+!  Number of steps between each mesh point
+   nsubsteps = 1
+!
+!  How many t-steps between each value of t at which the fields are
+!  written out
+   nt_writeout = 1
+!
+   
+!+++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+!
+!  Atomic or field data (the values specified here supersede those
+!  indicated in the defaultdata file, if any).
+!
+!+++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ 
+   Gamma_decay_f(1,2) = 5.746d0
+!  Gamma_decay_f(1,2) = 6.0666d0
+   detuning_fact(2,1) = -1.d0
+   detuning(1) = 0.d0
+   idir(1) = 1
+   wavelength(1) = 794.97901493300003d0
+!  wavelength(1) = 780.24136827100006d0
+   dip_mom(2,1,1) = 1.465d-29
+
+   popinit(1) = 1.d0
+ 
+!+++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+!
+!  Information about the output files.
+!
+!+++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ 
+   iappend = 0
+
+!  filename_tdamps_out = '/output/outamplitudes2.dat'  
+
+   filename_rho_out(1,1) = '/output/timedep_rho11.dat'
+   filename_rho_out(1,2) = '/output/timedep_rho12.dat'
+
+/
