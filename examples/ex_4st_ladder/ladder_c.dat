@@ -176,6 +176,6 @@
 !  The program should write the coherence rho_{21} to a file called
 !  ladder_rho21.dat. No other output is required.
 !
-   filename_rho_out(2,1) = 'ladder_rho21.dat'
+   filename_rho_out(2,1) = '/output/ladder_rho21.dat'
 
 /
