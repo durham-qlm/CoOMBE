@@ -1,10 +1,10 @@
 # CoOMBE
 **Co**mbined **O**ptical and **M**axwell-**B**loch **E**quations
 
-CoOMBE is a fortran program with two general aims:
+CoOMBE is a Fortran program with two general aims:
 
 1. integrating the optical Bloch equations for atoms interacting with one or several laser fields (i.e., integrating the equations governing the time evolution of the density matrix representing the quantum state of these atoms),
-2. integrating the Maxwell-Bloch equations for one or two laser fields (co)- propagating in an atomic vapour (i.e., integrating the equations describing how these fields evolves when propagating in such a medium).
+2. integrating the Maxwell-Bloch equations for one or two laser fields (co)- propagating in an atomic vapour (i.e., integrating the equations describing how these fields evolve when propagating in such a medium).
 
 ## Repository contents
 
