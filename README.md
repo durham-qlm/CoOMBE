@@ -3,16 +3,14 @@
 
 This repository contains the following items:
 
-1. Documentation
-----------------
+## Documentation
 
 doc/user_manual.pdf : The User Manual, giving a detailed description
                   of the present codes. This document also contains
                   a short tutorial on writing the Hamiltonian within
                   the rotating wave approximation. 
 
-2. Program files 
-----------------
+## Program files 
 
 source/driveall.f90         : The driveall program described in Section 4.4 of
                        the article and Section 4 of the User Manual.
@@ -24,8 +22,7 @@ source/obe.f90              : The obe and obe_constants modules and the ext_sets
                        subroutine.
 
 
-3. Examples
------------
+## Examples
 
 examples/ : A directory containing copies of the codes described in the
            appendices E and F of the article, as well as additional examples and associated documentation.
