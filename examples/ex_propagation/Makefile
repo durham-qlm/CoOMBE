@@ -1,4 +1,4 @@
-#simple make for ComMBE
+#simple make for CoOMBE
 CoOMBE : general_settings_3st.f90 ldbl.f90 obe.f90 mbe.f90 driveall.f90
 	gfortran -o CoOMBE general_settings_3st.f90 ldbl.f90 obe.f90 mbe.f90 driveall.f90 -llapack -lblas
 #clean:
