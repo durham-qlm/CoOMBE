@@ -32,7 +32,7 @@ This repository contains the following items:
 
 ## Prerequisites
 
-The standard installation requires a FORTRAN 90 compiler. The LAPACK and BLAS numerical libraries also need to be installed. We also provide an alternative method of running the programs using podman (REF). This require no installation of a compiler or numerical librariers on the user's machine.i
+The standard installation requires a Fortran 90 compiler. The LAPACK and BLAS numerical libraries also need to be installed. We also provide an alternative method of running the programs using podman (REF). This require no installation of a compiler or numerical librariers on the user's machine.
 
 ## License
 
