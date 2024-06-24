@@ -5,7 +5,7 @@ This repository contains the following items:
 
 ## Documentation
 
-- *doc/user_manual.pdf* : The User Manual, giving a detailed description
+- **doc/user_manual.pdf** : The User Manual, giving a detailed description
                   of the present codes. This document also contains
                   a short tutorial on writing the Hamiltonian within
                   the rotating wave approximation. 
