@@ -6,9 +6,7 @@ This folder contains the files listed below. Using these programs requires the l
 
 - **examples.pdf** : Further examples of the use of the driveall program for running the code.
 
-## Files related to the example given in Appendix E of the article - Folder ex_example
-
-These files are contained in the folde **
+## Files related to the example given in Appendix E of the article (folder ex_example)
 
 - **compile_3st**       : Example of compilation statement for this case.
 - **general_settings_3st.f90**  : The general_settings module for a 3-state model.
@@ -17,7 +15,7 @@ These files are contained in the folde **
 - **example_k.dat**     : The keyparams file for this example.
 
 
-## Files related to the example given in Appendix F of the article - Folder ex_propagation
+## Files related to the example given in Appendix F of the article (folder ex_propagation)
 
 - **compile_3st** : Example of compilation statement for this case.
 - **general_settings_3st.f90** : The general_settings module for a 3-state model.
@@ -31,7 +29,7 @@ These files are contained in the folde **
 
 
 
-## Files related to the first additional example (Section 2 of examples.pdf) - Folder ex_4st_ladder
+## Files related to the first additional example, section 2 of examples.pdf (folder ex_4st_ladder)
 
 - **compile_4st**       : Example of compilation statement for this case.
 - **general_settings_4st.f90**  : The general_settings module for a 4-state model.
@@ -43,7 +41,7 @@ These files are contained in the folde **
 
 
 
-## Files related to the second additional example (Section 3 of examples.pdf) - Folder ex_abs_D1_Rb
+## Files related to the second additional example, section 3 of examples.pdf (folder ex_abs_D1_Rb)
 
 - **compile_24st**      : Example of compilation statement for this case.
 - **general_settings_24st.f90** : The general_settings module for a 24-state model.
@@ -58,7 +56,7 @@ These files are contained in the folde **
 
 
 
-## Files related to the third additional example (Section 4 of examples.pdf) - Folder ex_rabi_osc
+## Files related to the third additional example, section 4 of examples.pdf (folder ex_rabi_osc)
 
 - **compile_2st**        : Example of compilation statement for this case.
 - **general_settings_2st.f90**  : The general_settings module for a 2-state model.
