@@ -13,4 +13,4 @@ WORKDIR /CoOMBE/
 #compile prgram using Makefile
 RUN make
 #Run program, then copy output file from podman image to local output directory
-CMD ./run_2st.sh 
+CMD ./run_rabi_osc.sh 
