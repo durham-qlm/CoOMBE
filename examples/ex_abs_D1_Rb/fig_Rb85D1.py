@@ -9,11 +9,11 @@ plt.rcParams['mathtext.fontset'] = 'cm'
 fig, (ax0) = plt.subplots(nrows=1,figsize=(6.4,4.0))
 
 Delta, chi_re2, chi_im2, refindx2, alpha2 = \
-                              np.genfromtxt(r'chi_weakprb_2', unpack=True)
+                          np.genfromtxt(r'chi_weakprb_2.dat', unpack=True)
 Delta, chi_re3, chi_im3, refindx3, alpha3 = \
-                              np.genfromtxt(r'chi_weakprb_3', unpack=True)
+                          np.genfromtxt(r'chi_weakprb_3.dat', unpack=True)
 Delta, chi_renw, chi_imnw, refindxnw, alphanw = \
-                              np.genfromtxt(r'chi_noweakprb', unpack=True)
+                          np.genfromtxt(r'chi_noweakprb.dat', unpack=True)
 plt.plot(Delta,alpha2)
 plt.plot(Delta,alpha3,'--')
 plt.plot(Delta,alphanw,':')
