@@ -1,6 +1,6 @@
 # Examples
 
-This folder contains the files listed below. Using these programs requires the ldbl, obe and (in most cases) mbe modules, as well as (except for the bespoke programs) the driveall program. Each folder contains the correpsonding **Makefile** and **Dockerfile** files to use when running the program with podman.
+This folder contains the files listed below. Using these programs normally requires the modules contained in the ldbl, obe and mbe files, as well as (except for the bespoke programs) the driveall program. The general_settings module is also necessary; a copy of this module is provided with each example, with the number of states adapted to the requirements of this example. Besides the files listed below, each folder also contains the **Makefile** file, **Dockerfile** file and **.sh** shell script used when running the program with Podman as explained in Appendix G of the article. The Makefile file and the shell scipt can also be used for compiling and running the codes outside Podman.  
 
 ## Documentation
 
