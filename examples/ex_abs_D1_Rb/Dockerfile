@@ -13,4 +13,4 @@ WORKDIR /CoOMBE/
 #compile prgram using Makefile
 RUN make
 #Run program, then copy output file from podman image to local output directory
-CMD ./run_24st.sh 
+CMD ./run_abs_D1_Rb.sh 
