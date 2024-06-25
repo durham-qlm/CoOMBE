@@ -4,8 +4,6 @@ RUN pacman -Syyu --noconfirm
 RUN pacman-db-upgrade
 #install fortran compiler and libraries
 RUN pacman -S --noconfirm make sudo gcc-fortran blas lapack
-#create an output directory
-RUN mkdir -p output
 #copy program source code, and input files to podman image
 COPY Makefile *.f90 *.sh *.dat /CoOMBE/
 #change working directory to podman image
