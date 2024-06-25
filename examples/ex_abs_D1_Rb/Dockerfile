@@ -10,7 +10,7 @@ RUN mkdir -p output
 COPY Makefile *.f90 *.sh *.dat /CoOMBE/
 #change working directory to podman image
 WORKDIR /CoOMBE/
-#compile prgram using Makefile
+#compile program using Makefile
 RUN make
 #Run program, then copy output file from podman image to local output directory
 CMD ./run_abs_D1_Rb.sh 
