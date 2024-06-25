@@ -8,7 +8,6 @@ This folder contains the files listed below. Using these programs requires the l
 
 ## Files related to the example given in Appendix E of the article (folder ex_example)
 
-- **compile_3st**       : Example of compilation statement for this case.
 - **general_settings_3st.f90**  : The general_settings module for a 3-state model.
 - **example.f90**       : The bespoke example program (the same example is also given in Section 3.7 of the User Manual).
 - **example_c.dat**     : The controlparams file for this example.
@@ -17,7 +16,6 @@ This folder contains the files listed below. Using these programs requires the l
 
 ## Files related to the example given in Appendix F of the article (folder ex_propagation)
 
-- **compile_3st** : Example of compilation statement for this case.
 - **general_settings_3st.f90** : The general_settings module for a 3-state model.
 - **prop.f90** : A bespoke program, not based on the driveall program, doing the same propagation calculation as that described in this appendix.
 - **prop_c.dat** : The controlparams file for this example.
@@ -31,7 +29,6 @@ This folder contains the files listed below. Using these programs requires the l
 
 ## Files related to the first additional example, section 2 of examples.pdf (folder ex_4st_ladder)
 
-- **compile_4st**       : Example of compilation statement for this case.
 - **general_settings_4st.f90**  : The general_settings module for a 4-state model.
 - **ladder_c.dat**      : The controlparams file for this example. 
 - **ladder_k.dat**      : The keyparams file for this example.
@@ -43,7 +40,6 @@ This folder contains the files listed below. Using these programs requires the l
 
 ## Files related to the second additional example, section 3 of examples.pdf (folder ex_abs_D1_Rb)
 
-- **compile_24st**      : Example of compilation statement for this case.
 - **general_settings_24st.f90** : The general_settings module for a 24-state model.
 - **Rb85D1_c.dat**      : The controlparams file for this example.
 - **Rb85D1_d.dat**      : The defaultdata file for this example.
@@ -58,7 +54,6 @@ This folder contains the files listed below. Using these programs requires the l
 
 ## Files related to the third additional example, section 4 of examples.pdf (folder ex_rabi_osc)
 
-- **compile_2st**        : Example of compilation statement for this case.
 - **general_settings_2st.f90**  : The general_settings module for a 2-state model.
 - **timedep_c.dat**      : The controlparams file for this example.
 - **timedep_k.dat**      : The keyparams file for this example.
