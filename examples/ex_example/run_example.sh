@@ -1,4 +1,10 @@
 #!/bin/bash
-echo "running ComMBE"
+#compile program and time
+echo "compiling CoOMBE"
+make
+echo "compile finished"
+echo "run CoOMBE (timed)"
 time ./ComMBE < example_k.dat
+#option to remove binary after program run
+rm ./CoOMBE
 echo "run complete"
