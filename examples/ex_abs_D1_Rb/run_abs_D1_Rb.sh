@@ -4,7 +4,7 @@ echo "compiling CoOMBE"
 make
 echo "compile finished"
 echo "run CoOMBE (timed)"
-time ./ComMBE < Rb85D1_k.dat
+time ./CoOMBE < Rb85D1_k.dat
 #option to remove binary after program run
 rm ./CoOMBE
 echo "run complete"

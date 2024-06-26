@@ -79,9 +79,9 @@
  
    iappend = 0
 
-!  filename_tdamps_out = '/output/outamplitudes2.dat'  
+!  filename_tdamps_out = 'outamplitudes2.dat'  
 
-   filename_rho_out(1,1) = '/output/timedep_rho11.dat'
-   filename_rho_out(1,2) = '/output/timedep_rho12.dat'
+   filename_rho_out(1,1) = 'timedep_rho11.dat'
+   filename_rho_out(1,2) = 'timedep_rho12.dat'
 
 /

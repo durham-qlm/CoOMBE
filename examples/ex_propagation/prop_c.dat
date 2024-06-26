@@ -84,9 +84,9 @@
  
    iappend = 0
 
-   filename_tdamps_out = '/output/outamplitudes.dat'  
+   filename_tdamps_out = 'outamplitudes.dat'  
 
-!  filename_rhoall_out = '/output/rho.dat' ! Uncomment this line for writing
+!  filename_rhoall_out = 'rho.dat' ! Uncomment this line for writing
                                    ! the whole density matrix on file
                                    ! at each step.
 /

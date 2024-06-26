@@ -90,6 +90,6 @@
  
    iappend = 0
 
-   filename_chi_out = '/output/chi_noweakprb.dat'
+   filename_chi_out = 'chi_noweakprb.dat'
  
 /
