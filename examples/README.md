@@ -44,9 +44,9 @@ This folder contains the files listed below. Using these programs normally requi
 - **Rb85D1_c.dat**      : The controlparams file for this example.
 - **Rb85D1_d.dat**      : The defaultdata file for this example.
 - **Rb85D1_k.dat**      : The keyparams file for this example.
-- **chi_noweakprb**     : File produced by the driveall program in this example.
-- **chi_weakprb_2**     : File produced by the driveall program in this example.
-- **chi_weakprb_3**     : File produced by the driveall program in this example.
+- **chi_noweakprb.dat** : File produced by the driveall program in this example.
+- **chi_weakprb_2.dat** : File produced by the driveall program in this example.
+- **chi_weakprb_3.dat** : File produced by the driveall program in this example.
 - **fig_Rb85D1.py**     : The python program used for plotting Fig. 2 of example.pdf.
 - **figure_Rb85D1.pdf** : The output of fig_Rb85D1.py.
 
