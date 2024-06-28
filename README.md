@@ -39,5 +39,5 @@ The standard installation requires a Fortran 90 compiler. The LAPACK and BLAS nu
 The files distributed with this program are provided subject to the GNU General Public License, Version 3.0. A Copy of the license is provided.
 
 ## Change Log
-v 1.0 (XX/XX/2024)
-- Program uploaded to repoitory.
+v 1.0 (27/06/2024)
+- Programs and associated files uploaded to repoitory.
