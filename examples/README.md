@@ -61,3 +61,26 @@ This folder contains the files listed below. Using these programs normally requi
 - **timedep_rho12.dat**  : File produced by the driveall program in this example.
 - **fig_timedep.py**     : The python program used for plotting Fig. 3 of example.pdf.
 - **figure_timedep.pdf** : The output of fig_timedep.py.
+
+
+
+## Files related to the fourth additional example, section 5 of examples.pdf (folder ex_optical_pumping)
+
+- **general_settings_10st.f90**  : The general_settings module for a 10-state model.
+- **optical_pumping_c.dat**      : The controlparams file for this example.
+- **optical_pumping_k.dat**      : The keyparams file for this example.
+- **rho11_full.dat**  : File produced by the driveall program in this example.
+- **rho11_rate.dat**  : File produced by the driveall program in this example.
+- **rho22_full.dat**  : File produced by the driveall program in this example.
+- **rho22_rate.dat**  : File produced by the driveall program in this example.
+- **rho33_full.dat**  : File produced by the driveall program in this example.
+- **rho33_rate.dat**  : File produced by the driveall program in this example.
+- **rho44_full.dat**  : File produced by the driveall program in this example.
+- **rho44_rate.dat**  : File produced by the driveall program in this example.
+- **rho55_full.dat**  : File produced by the driveall program in this example.
+- **rho55_rate.dat**  : File produced by the driveall program in this example.
+- **fig_optical_pumping.py**     : The python program used for plotting Fig. 3 of example.pdf.
+- **figure_optical_pumping.pdf** : The output of fig_timedep.py.
+
+
+

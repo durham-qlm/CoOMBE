@@ -1,0 +1,123 @@
+!
+!  Optical pumping calculation.
+!
+
+&controlparams
+ 
+!+++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+!
+!  Parameter defining the type of calculation 
+!
+!+++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+   icalc = 1     ! Define whether the program should calculate
+                 ! the time dependence of the density matrix (icalc = 1)
+                 ! or the density matrix (and optionally the susceptibility)
+                 ! in the steady state (icalc = 2) or propagate one or two
+                 ! fields (icalc = 3).
+ 
+!+++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+!
+!  Parameters controlling the choice of method(s)
+!
+!+++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ 
+   iRabi = 1
+
+   atol = 1.d-7
+   rtol = 1.d-7
+
+   inoncw = 0     ! 0: cw field. 1: treat the field as having a time-dependent
+                  ! envelope and use mbe_tdint_1 or 2.
+   n_time_steps =  300 
+!
+   ti =   0.000d0   !   0 mus
+   tf =  95.493d0   ! 600 mus / 2 pi
+
+!  Choice of integration rule and select one of the two options for irate.
+   imethod = 4   ! Use dop853.
+!  irate = 1     ! 1 for rate equations
+   irate = 0     ! 0 for full calculation
+!
+   
+!+++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+!
+!  Atomic or field data (the values specified here supersede those
+!  indicated in the defaultdata file, if any).
+!
+!+++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ 
+!  1 : 3S1/2 F = 2, m_F = -2 state
+!  2 : 3S1/2 F = 2, m_F = -1 state
+!  3 : 3S1/2 F = 2, m_F =  0 state
+!  4 : 3S1/2 F = 2, m_F =  1 state
+!  5 : 3S1/2 F = 2, m_F =  2 state
+!
+!  6 : 3P3/2 F = 3, m_F = -2 state
+!  7 : 3P3/2 F = 3, m_F = -1 state
+!  8 : 3P3/2 F = 3, m_F =  0 state
+!  9 : 3P3/2 F = 3, m_F =  1 state
+! 10 : 3P3/2 F = 3, m_F =  2 state
+
+!  We take Gamma/(2 pi) to be 1 MHz. The values of the elements
+!  of the array Gamma_decay set below are 1 MHz times the
+!  respective branching ratios. See Ungar et al (1989) for
+!  the latter.
+   Gamma_decay_f(1,6)  = 0.3333333d0  ! 20/60
+   Gamma_decay_f(2,6)  = 0.6666667d0  ! 40/60
+   Gamma_decay_f(1,7)  = 0.0666667d0  !  4/60
+   Gamma_decay_f(2,7)  = 0.5333333d0  ! 32/60
+   Gamma_decay_f(3,7)  = 0.4000000d0  ! 24/60
+   Gamma_decay_f(2,8)  = 0.2000000d0  ! 12/60
+   Gamma_decay_f(3,8)  = 0.6000000d0  ! 36/60
+   Gamma_decay_f(4,8)  = 0.2000000d0  ! 12/60
+   Gamma_decay_f(3,9)  = 0.4000000d0  ! 24/60
+   Gamma_decay_f(4,9)  = 0.5333333d0  ! 32/60
+   Gamma_decay_f(5,9)  = 0.0666667d0  !  4/60
+   Gamma_decay_f(4,10) = 0.6666667d0  ! 40/60
+   Gamma_decay_f(5,10) = 0.3333333d0  ! 20/60
+
+   detuning_fact( 6,1) = -1.d0
+   detuning_fact( 7,1) = -1.d0
+   detuning_fact( 8,1) = -1.d0
+   detuning_fact( 9,1) = -1.d0
+   detuning_fact(10,1) = -1.d0
+
+   detuning(1) = -2.73d0
+ 
+!  For Gamma/(2 pi) = 1 MHz, Omega/(2 pi) = 1.644667 MHz when
+!  Omega/Gamma = sqrt(2 s_0) with s_0 = 1.352464 as in
+!  Eckel et al (2022). See Ungar et al (1989) for the relative
+!  oscillator strengths.
+   Rabif(1, 6,1) = 0.9495487d0  ! 1.644667 MHz x sqrt(20/60)
+   Rabif(2, 7,1) = 1.201095d0   ! 1.644667 MHz x sqrt(32/60)
+   Rabif(3, 8,1) = 1.273953d0   ! 1.644667 MHz x sqrt(36/60)
+   Rabif(4, 9,1) = 1.201095d0   ! 1.644667 MHz x sqrt(32/60)
+   Rabif(5,10,1) = 0.9495487d0  ! 1.644667 MHz x sqrt(20/60)
+
+   popinit(1) = 1.d0
+ 
+!+++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+!
+!  Information about the output files.
+!
+!+++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ 
+   iprintrho = 0  ! To avoid the whole density matrix being
+                  ! written to the standard output stream.
+
+   iappend = 0
+
+!  filename_rho_out(1,1) = 'rho11_rate.dat'
+!  filename_rho_out(2,2) = 'rho22_rate.dat'
+!  filename_rho_out(3,3) = 'rho33_rate.dat'
+!  filename_rho_out(4,4) = 'rho44_rate.dat'
+!  filename_rho_out(5,5) = 'rho55_rate.dat'
+
+   filename_rho_out(1,1) = 'rho11_full.dat'
+   filename_rho_out(2,2) = 'rho22_full.dat'
+   filename_rho_out(3,3) = 'rho33_full.dat'
+   filename_rho_out(4,4) = 'rho44_full.dat'
+   filename_rho_out(5,5) = 'rho55_full.dat'
+
+/
