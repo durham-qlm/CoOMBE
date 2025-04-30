@@ -8,7 +8,7 @@ CoOMBE is a collection of Fortran programs with two general aims:
 
 This collection of programs is published in Computer Physics Communications: 
 
-R M Potvliege and S A Wrathmall, CoOMBE: A suite of open-source programs for the integration of the optical Bloch equations and Maxwell-Bloch equations, Comput. Phys. Commun. 306 (2025) 109374, https://doi.org/10.1016/j.cpc.2024.109374 [open access]
+R M Potvliege and S A Wrathmall, CoOMBE: A suite of open-source programs for the integration of the optical Bloch equations and Maxwell-Bloch equations, Comput. Phys. Commun. **306** (2025) 109374, https://doi.org/10.1016/j.cpc.2024.109374 [open access].
 
 This folder contains the following items:
 
