@@ -1,5 +1,4 @@
-# CoOMBE
-**Co**mbined **O**ptical and **M**axwell-**B**loch **E**quations
+# CoOMBE: **Co**mbined **O**ptical and **M**axwell-**B**loch **E**quations
 
 CoOMBE is a collection of Fortran programs with two general aims:
 
